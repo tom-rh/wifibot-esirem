@@ -17,6 +17,8 @@ public:
     QByteArray DataToSend;
     QByteArray DataReceived;
     QMutex Mutex;
+    void moveForward();
+    short Crc16(unsigned char *Adresse_tab, unsigned char Taille_max);
 
 signals:
     void updateUI(const QByteArray Data);
