@@ -1,4 +1,5 @@
 QT       += core gui
+QT += network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -10,10 +11,12 @@ CONFIG += c++17
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    wifibot.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    wifibot.h
 
 FORMS += \
     mainwindow.ui
