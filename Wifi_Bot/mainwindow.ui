@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="connexion">
+   <widget class="QPushButton" name="btnConnexion">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>connn</string>
+     <string>Connexion</string>
     </property>
    </widget>
   </widget>
@@ -34,7 +34,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -17,7 +17,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_connexion_clicked();
+    void on_btnConnexion_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -13,11 +13,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
-void MainWindow::on_connexion_clicked()
+void MainWindow::on_btnConnexion_clicked()
 {
-    qDebug()<<"hello";
-    ui->connexion->setText("rrfrr");
+    qDebug() << "btnConnexion";
+    ui->btnConnexion->setText("-");
     wifibot.doConnect();
 }
 
