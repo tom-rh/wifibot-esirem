@@ -18,5 +18,6 @@ void MainWindow::on_connexion_clicked()
 {
     qDebug()<<"hello";
     ui->connexion->setText("rrfrr");
+    wifibot.doConnect();
 }
 
