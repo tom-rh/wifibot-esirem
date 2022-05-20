@@ -17,8 +17,15 @@ MainWindow::~MainWindow()
 void MainWindow::on_btnConnexion_clicked()
 {
     qDebug() << "btnConnexion";
-    ui->btnConnexion->setText("-");
     wifibot.doConnect();
-    wifibot.moveToLeft();
+    wifibot.setSpeed(20);
+    wifibot.moveForward();
 
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    wifibot.setSpeed(0);
+    wifibot.disconnect();
+}
+
