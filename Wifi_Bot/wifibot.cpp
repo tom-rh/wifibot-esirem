@@ -2,6 +2,11 @@
 
 Wifibot::Wifibot(QObject *parent) : QObject(parent) {
     DataToSend.resize(9);
+    rightWheel=0;
+    leftWheel=0;
+    rightForward=1;
+    leftForward=1;
+    speed=100;
     DataToSend[0] = 0xFF;
     DataToSend[1] = 0x07;
     DataToSend[2] = 0x0;
@@ -17,12 +22,87 @@ Wifibot::Wifibot(QObject *parent) : QObject(parent) {
     connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); //Send data to wifibot timer
 }
 
+void Wifibot::setSpeed(int _speed){
+    speed=_speed;
+}
+
+void Wifibot::ResetMove() {
+    rightWheel=0;
+    leftWheel=0;
+    rightForward=1;
+    leftForward=1;
+    setSpeed(0);
+    DataToSend[2] = speed;
+    DataToSend[3] = (speed>>8);
+    DataToSend[4] = speed;
+    DataToSend[5] = (speed>>8);
+    pin6();
+    CrcAndSend();
+}
+
 void Wifibot::moveForward() {
-    DataToSend[2] = 0x32;
-    DataToSend[3] = 0x32;
-    DataToSend[4] = 0x32;
-    DataToSend[5] = 0x32;
-    DataToSend[6] = 0xF0;
+    rightWheel=1;
+    leftWheel=1;
+    rightForward=1;
+    leftForward=1;
+    DataToSend[2] = speed;
+    DataToSend[3] = (speed>>8);
+    DataToSend[4] = speed;
+    DataToSend[5] = (speed>>8);
+    pin6();
+    CrcAndSend();
+}
+
+void Wifibot::moveBackward() {
+    rightWheel=1;
+    leftWheel=1;
+    rightForward=0;
+    leftForward=0;
+    DataToSend[2] = speed;
+    DataToSend[3] = (speed>>8);
+    DataToSend[4] = speed;
+    DataToSend[5] = (speed>>8);
+    pin6();
+    CrcAndSend();
+}
+
+void Wifibot::moveToRight(){
+    rightWheel=1;
+    leftWheel=1;
+    rightForward=0;
+    leftForward=1;
+    DataToSend[2] = speed;
+    DataToSend[3] = (speed>>8);
+    DataToSend[4] = 0;
+    DataToSend[5] = (0>>8);
+    pin6();
+    CrcAndSend();
+}
+
+
+void Wifibot::moveToLeft(){
+    rightWheel=1;
+    leftWheel=0;
+    rightForward=1;
+    leftForward=0;
+    DataToSend[2] = 0;
+    DataToSend[3] = (0>>8);
+    DataToSend[4] = speed;
+    DataToSend[5] = (speed>>8);
+    pin6();
+    CrcAndSend();
+}
+
+void Wifibot::pin6(){
+    int val=0;
+    if(rightWheel==1)val+=32;
+    if(leftWheel==1)val+=128;
+    if(rightForward==1)val+=16;
+    if(leftForward==1)val+=64;
+    DataToSend[6]=val;
+}
+
+void Wifibot::CrcAndSend(){
     unsigned char *dat = (unsigned char *)DataToSend.data();
     short crc = Crc16(dat+1,6);
     DataToSend[7] = (char)crc;

@@ -17,7 +17,14 @@ public:
     QByteArray DataToSend;
     QByteArray DataReceived;
     QMutex Mutex;
+    void setSpeed(int _speed);
+    void ResetMove();
     void moveForward();
+    void moveBackward();
+    void moveToRight();
+    void moveToLeft();
+    void pin6();
+    void CrcAndSend();
     short Crc16(unsigned char *Adresse_tab, unsigned char Taille_max);
 
 signals:
@@ -32,6 +39,13 @@ public slots:
 private:
     QTcpSocket *socket;
     QTimer *TimerEnvoi;
+    int speed;
+    bool rightWheel;
+    bool leftWheel;
+    bool rightForward; //1-->forward, 0-->backward
+    bool leftForward; //1-->forward, 0-->backward
+    //
+    int etat; //0-->forward, 1-->
 };
 
 #endif // WIFIBOT_H
