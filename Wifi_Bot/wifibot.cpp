@@ -67,10 +67,8 @@ void Wifibot::moveBackward() {
 }
 
 void Wifibot::moveToRight(){
-    rightWheel=1;
+    rightWheel=0;
     leftWheel=1;
-    rightForward=0;
-    leftForward=1;
     DataToSend[2] = speed;
     DataToSend[3] = (speed>>8);
     DataToSend[4] = 0;
@@ -83,8 +81,6 @@ void Wifibot::moveToRight(){
 void Wifibot::moveToLeft(){
     rightWheel=1;
     leftWheel=0;
-    rightForward=1;
-    leftForward=0;
     DataToSend[2] = 0;
     DataToSend[3] = (0>>8);
     DataToSend[4] = speed;

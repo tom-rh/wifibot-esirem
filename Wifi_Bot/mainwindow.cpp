@@ -16,12 +16,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnConnexion_clicked()
 {
-    /*qDebug() << "btnConnexion";
+    qDebug() << "btnConnexion";
     ui->btnConnexion->setText("-");
     wifibot.doConnect();
-<<<<<<< Updated upstream
     wifibot.moveToLeft();
-=======
-    wifibot.moveForward();*/
->>>>>>> Stashed changes
+
 }
