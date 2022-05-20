@@ -19,5 +19,5 @@ void MainWindow::on_btnConnexion_clicked()
     qDebug() << "btnConnexion";
     ui->btnConnexion->setText("-");
     wifibot.doConnect();
-    wifibot.moveForward();
+    wifibot.moveToLeft();
 }
