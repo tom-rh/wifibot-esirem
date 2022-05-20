@@ -28,9 +28,10 @@ void MainWindow::on_btnStop_clicked()
     wifibot.ResetMove();
 }
 
-void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_btnRestart_clicked()
 {
-    wifibot.setSpeed(0);
-    wifibot.disconnect();
+    wifibot.setSpeed(20);
+    wifibot.moveForward();
 }
 

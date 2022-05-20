@@ -171,7 +171,12 @@ void Wifibot::readyRead() {
     qDebug() << "reading..."; // read the data from the socket
     DataReceived = socket->readAll();
     emit updateUI(DataReceived);
-    qDebug() << DataReceived[0] << DataReceived[1] << DataReceived[2];
+    // qDebug() << DataReceived[0] << DataReceived[1] << DataReceived[2] << DataReceived[3];
+    QString str = "";
+
+    str.append(DataReceived);
+
+    qDebug() << str;
 }
 
 void Wifibot::MyTimerSlot() {
