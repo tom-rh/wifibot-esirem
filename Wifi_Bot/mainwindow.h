@@ -19,6 +19,10 @@ public:
 private slots:
     void on_btnConnexion_clicked();
 
+    void on_btnStop_clicked();
+
+    void on_btnRestart_clicked();
+
 private:
     Ui::MainWindow *ui;
     Wifibot wifibot;
