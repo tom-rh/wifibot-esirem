@@ -20,7 +20,12 @@ void MainWindow::on_btnConnexion_clicked()
     wifibot.doConnect();
     wifibot.setSpeed(20);
     wifibot.moveForward();
+}
 
+
+void MainWindow::on_btnStop_clicked()
+{
+    wifibot.ResetMove();
 }
 
 void MainWindow::on_pushButton_clicked()
