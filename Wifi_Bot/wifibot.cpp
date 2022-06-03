@@ -179,7 +179,9 @@ void Wifibot::readyRead() {
 
     str.append(DataReceived);
 
-    qDebug() << str;
+    for (int i = 0; i < str.length(); i++) {
+        qDebug() << str[i];
+    }
 }
 
 void Wifibot::MyTimerSlot() {
