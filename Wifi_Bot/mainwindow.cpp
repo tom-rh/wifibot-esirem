@@ -19,7 +19,7 @@ void MainWindow::on_btnConnexion_clicked()
     qDebug() << "btnConnexion";
     wifibot.doConnect();
     wifibot.setSpeed(20);
-    wifibot.moveForward();
+    //wifibot.moveForward();
 }
 
 
@@ -42,25 +42,26 @@ void MainWindow::on_verticalSlider_valueChanged(int value)
 }
 
 
-void MainWindow::on_btnLeft_pressed()
+void MainWindow::on_btnLeft_clicked()
 {
     wifibot.moveToLeft();
+    qDebug() << "Gauche";
 }
 
 
-void MainWindow::on_btnTop_pressed()
+void MainWindow::on_btnTop_clicked()
 {
     wifibot.moveForward();
 }
 
 
-void MainWindow::on_btnRight_pressed()
+void MainWindow::on_btnRight_clicked()
 {
     wifibot.moveToRight();
 }
 
 
-void MainWindow::on_btnDown_pressed()
+void MainWindow::on_btnDown_clicked()
 {
     wifibot.moveBackward();
 }

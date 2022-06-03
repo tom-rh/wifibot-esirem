@@ -25,13 +25,13 @@ private slots:
 
     void on_verticalSlider_valueChanged(int value);
 
-    void on_btnLeft_pressed();
+    void on_btnLeft_clicked();
 
-    void on_btnTop_pressed();
+    void on_btnTop_clicked();
 
-    void on_btnRight_pressed();
+    void on_btnRight_clicked();
 
-    void on_btnDown_pressed();
+    void on_btnDown_clicked();
 
 private:
     Ui::MainWindow *ui;
