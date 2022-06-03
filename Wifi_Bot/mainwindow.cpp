@@ -19,7 +19,6 @@ void MainWindow::on_btnConnexion_clicked()
     qDebug() << "btnConnexion";
     wifibot.doConnect();
     wifibot.setSpeed(20);
-    //wifibot.moveForward();
 }
 
 
@@ -31,7 +30,6 @@ void MainWindow::on_btnStop_clicked()
 
 void MainWindow::on_btnRestart_clicked()
 {
-    wifibot.setSpeed(20);
     wifibot.moveForward();
 }
 
@@ -45,7 +43,6 @@ void MainWindow::on_verticalSlider_valueChanged(int value)
 void MainWindow::on_btnLeft_clicked()
 {
     wifibot.moveToLeft();
-    qDebug() << "Gauche";
 }
 
 
