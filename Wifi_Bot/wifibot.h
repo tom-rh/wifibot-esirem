@@ -46,6 +46,7 @@ private:
     bool leftForward; //1-->forward, 0-->backward
     //
     int etat; //0-->forward, 1-->
+    int levelBattery;
 };
 
 #endif // WIFIBOT_H
