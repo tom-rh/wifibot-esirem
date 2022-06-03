@@ -19,6 +19,7 @@ void MainWindow::on_btnConnexion_clicked()
     qDebug() << "btnConnexion";
     wifibot.doConnect();
     wifibot.setSpeed(20);
+    wifibot.readyRead();
 }
 
 
