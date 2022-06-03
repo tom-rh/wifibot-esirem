@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->video->load(QUrl(QString("http://192.168.1.106:8080/?action=stream")));
 }
 
 MainWindow::~MainWindow()

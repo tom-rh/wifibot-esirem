@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWebEngineView>
 #include "wifibot.h"
 
 QT_BEGIN_NAMESPACE
