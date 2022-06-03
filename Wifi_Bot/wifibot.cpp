@@ -178,6 +178,11 @@ void Wifibot::readyRead() {
     emit updateUI(DataReceived);
     QString str = "";
 
+    if(int(DataReceived[2])>=0)
+    qDebug() << "Batterie" << (int(DataReceived[2])*100)/256 << "% de batterie";
+    if(int(DataReceived[2])<0)
+    qDebug() << "Batterie" << ((256+int(DataReceived[2]))*100)/256 << "% de batterie";
+    //qDebug() << "Batterie" << float(DataReceived[2]);
     str.append(DataReceived);
 
     for (int i = 0; i < str.length(); i++) {
