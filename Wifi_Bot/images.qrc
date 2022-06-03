@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>ressources/off.jpg</file>
         <file>ressources/on.jpg</file>
+        <file>ressources/arrow-down.jpg</file>
+        <file>ressources/arrow-left.jpg</file>
+        <file>ressources/arrow-right.jpg</file>
+        <file>ressources/arrow-top.jpg</file>
     </qresource>
 </RCC>

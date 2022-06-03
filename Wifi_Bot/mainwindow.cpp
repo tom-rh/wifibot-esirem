@@ -35,3 +35,33 @@ void MainWindow::on_btnRestart_clicked()
     wifibot.moveForward();
 }
 
+
+void MainWindow::on_verticalSlider_valueChanged(int value)
+{
+    wifibot.setSpeed(value);
+}
+
+
+void MainWindow::on_btnLeft_pressed()
+{
+    wifibot.moveToLeft();
+}
+
+
+void MainWindow::on_btnTop_pressed()
+{
+    wifibot.moveForward();
+}
+
+
+void MainWindow::on_btnRight_pressed()
+{
+    wifibot.moveToRight();
+}
+
+
+void MainWindow::on_btnDown_pressed()
+{
+    wifibot.moveBackward();
+}
+

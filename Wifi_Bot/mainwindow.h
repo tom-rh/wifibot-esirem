@@ -23,6 +23,16 @@ private slots:
 
     void on_btnRestart_clicked();
 
+    void on_verticalSlider_valueChanged(int value);
+
+    void on_btnLeft_pressed();
+
+    void on_btnTop_pressed();
+
+    void on_btnRight_pressed();
+
+    void on_btnDown_pressed();
+
 private:
     Ui::MainWindow *ui;
     Wifibot wifibot;
