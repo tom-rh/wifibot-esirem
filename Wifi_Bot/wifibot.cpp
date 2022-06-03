@@ -178,10 +178,14 @@ void Wifibot::readyRead() {
     emit updateUI(DataReceived);
     QString str = "";
 
-    if(int(DataReceived[0])>=0)
-    qDebug() << "Vitesse" << (int(DataReceived[0])*100)/256 << "% de la vitesse max";
-    if(int(DataReceived[0])<0)
-    qDebug() << "Vitesse" << ((256+int(DataReceived[0]))*100)/256 << "% de la vitesse max";
+    if(int(DataReceived[0])>=0){
+        qDebug() << "Vitesse" << (int(DataReceived[0])*100)/256 << "% de la vitesse max";
+        currentSpeed=(int(DataReceived[0])*100)/256;
+    }
+    if(int(DataReceived[0])<0){
+        qDebug() << "Vitesse" << ((256+int(DataReceived[0]))*100)/256 << "% de la vitesse max";
+        currentSpeed=((256+int(DataReceived[0]))*100)/256;
+    }
 //(int(((DataReceived[1] << 8) + DataReceived[0])))
 
 

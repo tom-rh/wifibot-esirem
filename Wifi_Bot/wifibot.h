@@ -47,6 +47,7 @@ private:
     //
     int etat; //0-->forward, 1-->
     int levelBattery;
+    int currentSpeed;
 };
 
 #endif // WIFIBOT_H
