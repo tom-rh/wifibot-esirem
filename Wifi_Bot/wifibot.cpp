@@ -51,6 +51,8 @@ void Wifibot::moveForward() {
     DataToSend[5] = (speed>>8);
     pin6();
     CrcAndSend();
+    qDebug() << "Avance";
+    qDebug() << speed;
 }
 
 void Wifibot::moveBackward() {
@@ -174,13 +176,12 @@ void Wifibot::readyRead() {
     qDebug() << "reading..."; // read the data from the socket
     DataReceived = socket->readAll();
     emit updateUI(DataReceived);
-    // qDebug() << DataReceived[0] << DataReceived[1] << DataReceived[2] << DataReceived[3];
     QString str = "";
 
     str.append(DataReceived);
 
     for (int i = 0; i < str.length(); i++) {
-        qDebug() << str[i];
+        // qDebug() << str[i];
     }
 }
 
