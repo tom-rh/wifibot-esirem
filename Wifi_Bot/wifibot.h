@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QTimer>
 #include <QMutex>
+#include <QNetworkAccessManager>
 
 class Wifibot : public QObject {
     Q_OBJECT
@@ -23,6 +24,10 @@ public:
     void moveBackward();
     void moveToRight();
     void moveToLeft();
+    void moveCamToLeft();
+    void moveCamToRight();
+    void moveCamToUp();
+    void moveCamToDown();
     void pin6();
     void CrcAndSend();
     short Crc16(unsigned char *Adresse_tab, unsigned char Taille_max);
@@ -48,6 +53,7 @@ private:
     int etat; //0-->forward, 1-->
     int levelBattery;
     int currentSpeed;
+    QNetworkAccessManager *Camera;
 };
 
 #endif // WIFIBOT_H

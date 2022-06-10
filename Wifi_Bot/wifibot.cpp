@@ -20,6 +20,8 @@ Wifibot::Wifibot(QObject *parent) : QObject(parent) {
     TimerEnvoi = new QTimer();
     // setup signal and slot
     connect(TimerEnvoi, SIGNAL(timeout()), this, SLOT(MyTimerSlot())); //Send data to wifibot timer
+
+    Camera=new QNetworkAccessManager();
 }
 
 void Wifibot::setSpeed(int _speed){
@@ -92,6 +94,19 @@ void Wifibot::moveToLeft(){
     DataToSend[5] = (speed>>8);
     pin6();
     CrcAndSend();
+}
+
+void Wifibot::moveCamToLeft(){
+    this->Camera->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=200")));
+}
+void Wifibot::moveCamToRight(){
+    this->Camera->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094852&group=1&value=-200")));
+}
+void Wifibot::moveCamToUp(){
+    this->Camera->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=-200")));
+}
+void Wifibot::moveCamToDown(){
+    this->Camera->get(QNetworkRequest(QUrl("http://192.168.1.106:8080/?action=command&dest=0&plugin=0&id=10094853&group=1&value=200")));
 }
 
 void Wifibot::pin6(){
