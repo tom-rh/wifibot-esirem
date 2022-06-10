@@ -54,6 +54,7 @@ private:
     int levelBattery;
     int currentSpeed;
     int IR, IR2;
+    long odometry;
     QNetworkAccessManager *Camera;
 };
 
