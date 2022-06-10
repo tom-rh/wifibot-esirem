@@ -53,6 +53,7 @@ private:
     int etat; //0-->forward, 1-->
     int levelBattery;
     int currentSpeed;
+    int IR, IR2;
     QNetworkAccessManager *Camera;
 };
 
