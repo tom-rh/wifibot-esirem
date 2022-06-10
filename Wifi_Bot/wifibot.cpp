@@ -190,12 +190,12 @@ void Wifibot::readyRead() {
 
 
     if(int(DataReceived[2])>=0){
-        qDebug() << "Batterie" << (int(DataReceived[2])*100)/256 << "% de batterie";
-        levelBattery=(int(DataReceived[2])*100)/256;
+        qDebug() << "Batterie" << (int(DataReceived[2] << 2)*100)/404 << "% de batterie";
+        levelBattery=(int(DataReceived[2])*100)/404;
     }
     if(int(DataReceived[2])<0){
-        qDebug() << "Batterie" << ((256+int(DataReceived[2]))*100)/256 << "% de batterie";
-        levelBattery=((256+int(DataReceived[2]))*100)/256;
+        qDebug() << "Batterie" << ((404+int(DataReceived[2] << 2))*100)/404 << "% de batterie";
+        levelBattery=((404+int(DataReceived[2]))*100)/404;
     }
     //qDebug() << "Batterie" << float(DataReceived[2]);
     str.append(DataReceived);
