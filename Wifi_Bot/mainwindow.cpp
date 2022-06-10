@@ -65,3 +65,27 @@ void MainWindow::on_btnDown_clicked()
     wifibot.moveBackward();
 }
 
+
+void MainWindow::on_btnTopCamera_clicked()
+{
+    wifibot.moveCamToUp();
+}
+
+
+void MainWindow::on_btnRightCamera_clicked()
+{
+    wifibot.moveCamToRight();
+}
+
+
+void MainWindow::on_btnDownCamera_clicked()
+{
+    wifibot.moveCamToDown();
+}
+
+
+void MainWindow::on_btnLeftCamera_clicked()
+{
+    wifibot.moveCamToLeft();
+}
+

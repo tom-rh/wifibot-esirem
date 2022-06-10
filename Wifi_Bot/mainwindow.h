@@ -34,6 +34,14 @@ private slots:
 
     void on_btnDown_clicked();
 
+    void on_btnTopCamera_clicked();
+
+    void on_btnRightCamera_clicked();
+
+    void on_btnDownCamera_clicked();
+
+    void on_btnLeftCamera_clicked();
+
 private:
     Ui::MainWindow *ui;
     Wifibot wifibot;
