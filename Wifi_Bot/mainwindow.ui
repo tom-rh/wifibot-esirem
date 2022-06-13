@@ -148,7 +148,7 @@ background-repeat: none;
      <string>STOP</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnRestart">
+   <widget class="QPushButton" name="btnUpdate">
     <property name="geometry">
      <rect>
       <x>250</x>
@@ -158,7 +158,7 @@ background-repeat: none;
      </rect>
     </property>
     <property name="text">
-     <string>RESTART</string>
+     <string>UPDATE</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnRight">
