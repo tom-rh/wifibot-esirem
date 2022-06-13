@@ -227,6 +227,14 @@ void Wifibot::readyRead() {
     }
 }
 
+int Wifibot::getSpeed(){
+    return currentSpeed;
+}
+
+int Wifibot::getBattery(){
+    return levelBattery;
+}
+
 void Wifibot::MyTimerSlot() {
     qDebug() << "Timer...";
     while(Mutex.tryLock());

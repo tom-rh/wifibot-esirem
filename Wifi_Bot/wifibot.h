@@ -31,6 +31,8 @@ public:
     void pin6();
     void CrcAndSend();
     short Crc16(unsigned char *Adresse_tab, unsigned char Taille_max);
+    int getSpeed();
+    int getBattery();
 
 signals:
     void updateUI(const QByteArray Data);
