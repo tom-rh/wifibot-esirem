@@ -201,17 +201,11 @@ void Wifibot::readyRead() {
         qDebug() << "Vitesse" << ((256+int(DataReceived[0]))*100)/256 << "% de la vitesse max";
         currentSpeed=((256+int(DataReceived[0]))*100)/256;
     }
-//(int(((DataReceived[1] << 8) + DataReceived[0])))
+
+    qDebug() << "Batterie" << (float)((unsigned char)(DataReceived[2] >> 2))/4 << "% de batterie";
+    levelBattery=(float)((unsigned char)(DataReceived[2] >> 2))/4;
 
 
-    if(int(DataReceived[2])>=0){
-        qDebug() << "Batterie" << (int(DataReceived[2] << 2)*100)/404 << "% de batterie";
-        levelBattery=(int(DataReceived[2])*100)/404;
-    }
-    if(int(DataReceived[2])<0){
-        qDebug() << "Batterie" << ((404+int(DataReceived[2] << 2))*100)/404 << "% de batterie";
-        levelBattery=((404+int(DataReceived[2]))*100)/404;
-    }
 
     IR = DataReceived[11];
     IR2 = DataReceived[12];
