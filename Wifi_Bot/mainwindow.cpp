@@ -38,47 +38,63 @@ void MainWindow::on_verticalSlider_valueChanged(int value)
 void MainWindow::on_btnLeft_clicked()
 {
     wifibot.moveToLeft();
+    this->on_btnUpdate_clicked();
 }
 
 
 void MainWindow::on_btnTop_clicked()
 {
     wifibot.moveForward();
+    this->on_btnUpdate_clicked();
 }
 
 
 void MainWindow::on_btnRight_clicked()
 {
     wifibot.moveToRight();
+    this->on_btnUpdate_clicked();
 }
 
 
 void MainWindow::on_btnDown_clicked()
 {
     wifibot.moveBackward();
+    this->on_btnUpdate_clicked();
 }
 
 
 void MainWindow::on_btnTopCamera_clicked()
 {
     wifibot.moveCamToUp();
+    this->on_btnUpdate_clicked();
 }
 
 
 void MainWindow::on_btnRightCamera_clicked()
 {
     wifibot.moveCamToRight();
+    this->on_btnUpdate_clicked();
 }
 
 
 void MainWindow::on_btnDownCamera_clicked()
 {
     wifibot.moveCamToDown();
+    this->on_btnUpdate_clicked();
 }
 
 
 void MainWindow::on_btnLeftCamera_clicked()
 {
     wifibot.moveCamToLeft();
+    this->on_btnUpdate_clicked();
+}
+
+void MainWindow::on_btnUpdate_clicked()
+{
+    ui->batteryBar->setValue(wifibot.getBattery());
+    ui->lcdSpeed->display(wifibot.getSpeed());
+    ui->lcdIR1->display(wifibot.getIR());
+    ui->lcdIR2->display(wifibot.getIR2());
 }
 
