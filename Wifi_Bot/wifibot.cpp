@@ -207,9 +207,9 @@ void Wifibot::readyRead() {
 
 
 
-    IR = (unsigned char)(DataReceived[11] >> 2);
-    IR2 = (unsigned char)(DataReceived[12] >> 2);
     odometry = ((((long)DataReceived[16] << 24)) + (((long)DataReceived[15] << 16)) + (((long)DataReceived[14] << 8)) + ((long)DataReceived[13]));
+    IR = (unsigned char)(DataReceived[11] << 2);
+    IR2 = (unsigned char)(DataReceived[12] << 2);
 
     qDebug() << "IR : " << IR << " IR2 : " << IR2;
     qDebug() << "Odometry : " << odometry;
