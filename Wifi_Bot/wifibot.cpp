@@ -7,6 +7,7 @@ Wifibot::Wifibot(QObject *parent) : QObject(parent) {
     rightForward=1;
     leftForward=1;
     speed=100;
+    odometryTest=0;
     DataToSend[0] = 0xFF;
     DataToSend[1] = 0x07;
     DataToSend[2] = 0x0;
@@ -205,14 +206,23 @@ void Wifibot::readyRead() {
     qDebug() << "Batterie" << (float)((unsigned char)(DataReceived[2] << 2))/4 << "% de batterie";
     levelBattery=(float)((unsigned char)(DataReceived[2] << 2))/4;
 
+    if(odometryTest==0 && levelBattery!=0){
+        odometryLOr = ((((long)DataReceived[8] << 24)) + (((long)DataReceived[7] << 16)) + (((long)DataReceived[6] << 8)) + ((long)DataReceived[5]));
+        odometryROr = ((((long)DataReceived[16] << 24)) + (((long)DataReceived[15] << 16)) + (((long)DataReceived[14] << 8)) + ((long)DataReceived[13]));
+        odometryTest=1;
+    }
 
-
-    odometry = ((((long)DataReceived[16] << 24)) + (((long)DataReceived[15] << 16)) + (((long)DataReceived[14] << 8)) + ((long)DataReceived[13]));
     IR = (unsigned char)(DataReceived[11] << 2);
     IR2 = (unsigned char)(DataReceived[12] << 2);
+    odometryL = ((((long)DataReceived[8] << 24)) + (((long)DataReceived[7] << 16)) + (((long)DataReceived[6] << 8)) + ((long)DataReceived[5]));
+    odometryR = ((((long)DataReceived[16] << 24)) + (((long)DataReceived[15] << 16)) + (((long)DataReceived[14] << 8)) + ((long)DataReceived[13]));
 
     qDebug() << "IR : " << IR << " IR2 : " << IR2;
-    qDebug() << "Odometry : " << odometry;
+    qDebug() << "Odometry Gauche Origin : " << odometryLOr << "Odometry Droite Origin : " << odometryROr;
+    qDebug() << "Odometry Gauche Total : " << odometryL << "Odometry Droite Total : " << odometryR;
+    qDebug() << "Odometry Gauche : " << (odometryL-odometryLOr) << "Odometry Droite : " << (odometryR-odometryROr);
+    currentOdometryL=(odometryL-odometryLOr);
+    currentOdometryR=(odometryR-odometryROr);
 
     str.append(DataReceived);
 
@@ -235,6 +245,14 @@ int Wifibot::getIR(){
 
 int Wifibot::getIR2(){
     return IR2;
+}
+
+long Wifibot::getOdometryL(){
+    return currentOdometryL;
+}
+
+long Wifibot::getOdometryR(){
+    return currentOdometryR;
 }
 
 void Wifibot::MyTimerSlot() {

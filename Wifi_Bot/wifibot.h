@@ -35,6 +35,8 @@ public:
     int getBattery();
     int getIR();
     int getIR2();
+    long getOdometryL();
+    long getOdometryR();
 
 signals:
     void updateUI(const QByteArray Data);
@@ -58,7 +60,8 @@ private:
     int levelBattery;
     int currentSpeed;
     int IR, IR2;
-    long odometry;
+    long currentOdometryR, currentOdometryL, odometryR, odometryL, odometryROr, odometryLOr;
+    int odometryTest;
     QNetworkAccessManager *Camera;
 };
 
