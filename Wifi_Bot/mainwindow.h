@@ -22,8 +22,6 @@ private slots:
 
     void on_btnStop_clicked();
 
-    void on_btnRestart_clicked();
-
     void on_verticalSlider_valueChanged(int value);
 
     void on_btnLeft_clicked();
@@ -41,6 +39,8 @@ private slots:
     void on_btnDownCamera_clicked();
 
     void on_btnLeftCamera_clicked();
+
+    void on_btnUpdate_clicked();
 
 private:
     Ui::MainWindow *ui;

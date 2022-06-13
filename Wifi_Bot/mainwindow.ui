@@ -92,6 +92,9 @@ background-repeat: none;
       <height>23</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdSpeed {color: red; background: white;}</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -397,6 +400,58 @@ background-repeat: none;
     </property>
     <property name="text">
      <string>Déplacements camera</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdIR1">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>10</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdIR1 {color: red; background: white;}</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdIR2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>40</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdIR2 {color: red; background: white;}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>10</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>IR 1 :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>40</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>IR 2 :</string>
     </property>
    </widget>
   </widget>
