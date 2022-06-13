@@ -17,9 +17,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnConnexion_clicked()
 {
-    qDebug() << "btnConnexion";
     wifibot.doConnect();
-    wifibot.setSpeed(20);
     wifibot.readyRead();
 }
 
@@ -96,5 +94,7 @@ void MainWindow::on_btnUpdate_clicked()
     ui->lcdSpeed->display(wifibot.getSpeed());
     ui->lcdIR1->display(wifibot.getIR());
     ui->lcdIR2->display(wifibot.getIR2());
+    ui->lcdOdometrieG->display((int)wifibot.getOdometryL());
+    ui->lcdOdometrieD->display((int)wifibot.getOdometryR());
 }
 
