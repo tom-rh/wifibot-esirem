@@ -29,13 +29,6 @@ void MainWindow::on_btnStop_clicked()
     wifibot.ResetMove();
 }
 
-
-void MainWindow::on_btnRestart_clicked()
-{
-    wifibot.moveForward();
-}
-
-
 void MainWindow::on_verticalSlider_valueChanged(int value)
 {
     wifibot.setSpeed(value);
