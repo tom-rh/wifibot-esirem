@@ -141,8 +141,8 @@ background-repeat: none;
    <widget class="QPushButton" name="btnStop">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>30</y>
+      <x>110</x>
+      <y>40</y>
       <width>75</width>
       <height>24</height>
      </rect>
@@ -154,8 +154,8 @@ background-repeat: none;
    <widget class="QPushButton" name="btnUpdate">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>30</y>
+      <x>110</x>
+      <y>10</y>
       <width>75</width>
       <height>24</height>
      </rect>
@@ -185,6 +185,9 @@ background-repeat: none;
     <property name="text">
      <string/>
     </property>
+    <property name="shortcut">
+     <string>D</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="btnDown">
     <property name="geometry">
@@ -206,6 +209,9 @@ background-repeat: none;
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="shortcut">
+     <string>S</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnTop">
@@ -229,6 +235,9 @@ background-repeat: none;
     <property name="text">
      <string/>
     </property>
+    <property name="shortcut">
+     <string>Z</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="btnLeft">
     <property name="geometry">
@@ -250,6 +259,9 @@ background-repeat: none;
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="shortcut">
+     <string>Q</string>
     </property>
    </widget>
    <widget class="QWebEngineView" name="video" native="true">
@@ -322,6 +334,9 @@ background-repeat: none;
     <property name="text">
      <string/>
     </property>
+    <property name="shortcut">
+     <string>Up</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="btnRightCamera">
     <property name="geometry">
@@ -366,6 +381,9 @@ background-repeat: none;
     <property name="text">
      <string/>
     </property>
+    <property name="shortcut">
+     <string>Down</string>
+    </property>
    </widget>
    <widget class="QPushButton" name="btnLeftCamera">
     <property name="geometry">
@@ -387,6 +405,9 @@ background-repeat: none;
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="shortcut">
+     <string>Left</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -452,6 +473,58 @@ background-repeat: none;
     </property>
     <property name="text">
      <string>IR 2 :</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdOdometrieG">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>10</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdOdometrieG {color: red; background: white;}</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdOdometrieD">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>40</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdOdometrieD {color: red; background: white;}</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>278</x>
+      <y>10</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Odométrie Gauche :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>40</y>
+      <width>111</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Odométrie Droite :</string>
     </property>
    </widget>
   </widget>
