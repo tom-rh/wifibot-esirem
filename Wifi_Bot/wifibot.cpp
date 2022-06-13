@@ -207,8 +207,8 @@ void Wifibot::readyRead() {
 
 
 
-    IR = DataReceived[11];
-    IR2 = DataReceived[12];
+    IR = (unsigned char)(DataReceived[11] >> 2);
+    IR2 = (unsigned char)(DataReceived[12] >> 2);
     odometry = ((((long)DataReceived[16] << 24)) + (((long)DataReceived[15] << 16)) + (((long)DataReceived[14] << 8)) + ((long)DataReceived[13]));
 
     qDebug() << "IR : " << IR << " IR2 : " << IR2;
@@ -227,6 +227,14 @@ int Wifibot::getSpeed(){
 
 int Wifibot::getBattery(){
     return levelBattery;
+}
+
+int Wifibot::getIR(){
+    return IR;
+}
+
+int Wifibot::getIR2(){
+    return IR2;
 }
 
 void Wifibot::MyTimerSlot() {
