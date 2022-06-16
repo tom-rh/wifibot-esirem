@@ -413,7 +413,7 @@ background-repeat: none;
      <string>Déplacements camera</string>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdIR1">
+   <widget class="QLCDNumber" name="lcdIRD1">
     <property name="geometry">
      <rect>
       <x>530</x>
@@ -423,10 +423,10 @@ background-repeat: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#lcdIR1 {color: red; background: white;}</string>
+     <string notr="true">#lcdIRD1 {color: red; background: white;}</string>
     </property>
    </widget>
-   <widget class="QLCDNumber" name="lcdIR2">
+   <widget class="QLCDNumber" name="lcdIRD2">
     <property name="geometry">
      <rect>
       <x>530</x>
@@ -436,39 +436,39 @@ background-repeat: none;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">#lcdIR2 {color: red; background: white;}</string>
+     <string notr="true">#lcdIRD2 {color: red; background: white;}</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>490</x>
       <y>10</y>
       <width>49</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>IR 1 :</string>
+     <string>IRD 1 :</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>490</x>
       <y>40</y>
       <width>49</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>IR 2 :</string>
+     <string>IRD 2 :</string>
     </property>
    </widget>
    <widget class="QLCDNumber" name="lcdOdometrieG">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>300</x>
       <y>10</y>
       <width>64</width>
       <height>23</height>
@@ -481,7 +481,7 @@ background-repeat: none;
    <widget class="QLCDNumber" name="lcdOdometrieD">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>300</x>
       <y>40</y>
       <width>64</width>
       <height>23</height>
@@ -494,7 +494,7 @@ background-repeat: none;
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>278</x>
+      <x>190</x>
       <y>10</y>
       <width>111</width>
       <height>16</height>
@@ -507,7 +507,7 @@ background-repeat: none;
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>190</x>
       <y>40</y>
       <width>111</width>
       <height>16</height>
@@ -515,6 +515,58 @@ background-repeat: none;
     </property>
     <property name="text">
      <string>Odométrie Droite :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>10</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>IRG 1 :</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>40</y>
+      <width>49</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>IRG 2 :</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdIRG1">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>10</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdIRG1 {color: red; background: white;}</string>
+    </property>
+   </widget>
+   <widget class="QLCDNumber" name="lcdIRG2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>40</y>
+      <width>64</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#lcdIRG2 {color: red; background: white;}</string>
     </property>
    </widget>
   </widget>

@@ -92,8 +92,10 @@ void MainWindow::on_btnUpdate_clicked()
 {
     ui->batteryBar->setValue(wifibot.getBattery());
     ui->lcdSpeed->display(wifibot.getSpeed());
-    ui->lcdIR1->display(wifibot.getIR());
-    ui->lcdIR2->display(wifibot.getIR2());
+    ui->lcdIRD1->display(wifibot.getRightFrontIR());
+    ui->lcdIRD2->display(wifibot.getRightBackIR());
+    ui->lcdIRG1->display(wifibot.getLeftFrontIR());
+    ui->lcdIRG2->display(wifibot.getLeftBackIR());
     ui->lcdOdometrieG->display((int)wifibot.getOdometryL());
     ui->lcdOdometrieD->display((int)wifibot.getOdometryR());
 }
