@@ -41,20 +41,10 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">#btnConnexion {
-background-color: transparent;
-border-image: url(:ressources/off.jpg);
-background: none;
-border: none;
-background-repeat: none;
-}
-#btnConnexion:clicked
-{
-   border-image: url(:ressources/on.jpg);
-}</string>
+     <string notr="true"/>
     </property>
     <property name="text">
-     <string/>
+     <string>CONNECT</string>
     </property>
    </widget>
    <widget class="Line" name="line">
