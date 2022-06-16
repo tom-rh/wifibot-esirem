@@ -33,8 +33,10 @@ public:
     short Crc16(unsigned char *Adresse_tab, unsigned char Taille_max);
     int getSpeed();
     int getBattery();
-    int getIR();
-    int getIR2();
+    int getRightFrontIR();
+    int getRightBackIR();
+    int getLeftFrontIR();
+    int getLeftBackIR();
     long getOdometryL();
     long getOdometryR();
 
@@ -59,7 +61,7 @@ private:
     int etat; //0-->forward, 1-->
     int levelBattery;
     int currentSpeed;
-    int IR, IR2;
+    int RightFrontIR, RightBackIR,LeftFrontIR, LeftBackIR;
     long currentOdometryR, currentOdometryL, odometryR, odometryL, odometryROr, odometryLOr;
     int odometryTest;
     QNetworkAccessManager *Camera;

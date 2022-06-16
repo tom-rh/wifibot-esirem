@@ -212,12 +212,14 @@ void Wifibot::readyRead() {
         odometryTest=1;
     }
 
-    IR = (unsigned char)(DataReceived[11] << 2);
-    IR2 = (unsigned char)(DataReceived[12] << 2);
+    RightFrontIR = (unsigned char)(DataReceived[11] << 2);
+    RightBackIR = (unsigned char)(DataReceived[12] << 2);
+    LeftFrontIR = (unsigned char)(DataReceived[3] << 2);
+    LeftBackIR = (unsigned char)(DataReceived[4] << 2);
     odometryL = ((((long)DataReceived[8] << 24)) + (((long)DataReceived[7] << 16)) + (((long)DataReceived[6] << 8)) + ((long)DataReceived[5]));
     odometryR = ((((long)DataReceived[16] << 24)) + (((long)DataReceived[15] << 16)) + (((long)DataReceived[14] << 8)) + ((long)DataReceived[13]));
 
-    qDebug() << "IR : " << IR << " IR2 : " << IR2;
+    qDebug() << "IR Right Front : " << RightFrontIR << " IR Right Back : " << RightBackIR << "IR Left Front : " << LeftFrontIR << " IR Left Back : " << LeftBackIR;
     qDebug() << "Odometry Gauche Origin : " << odometryLOr << "Odometry Droite Origin : " << odometryROr;
     qDebug() << "Odometry Gauche Total : " << odometryL << "Odometry Droite Total : " << odometryR;
     qDebug() << "Odometry Gauche : " << (odometryL-odometryLOr) << "Odometry Droite : " << (odometryR-odometryROr);
@@ -239,12 +241,17 @@ int Wifibot::getBattery(){
     return levelBattery;
 }
 
-int Wifibot::getIR(){
-    return IR;
+int Wifibot::getRightFrontIR(){
+    return RightFrontIR;
 }
-
-int Wifibot::getIR2(){
-    return IR2;
+int Wifibot::getRightBackIR(){
+    return RightBackIR;
+}
+int Wifibot::getLeftFrontIR(){
+    return LeftFrontIR;
+}
+int Wifibot::getLeftBackIR(){
+    return LeftBackIR;
 }
 
 long Wifibot::getOdometryL(){
